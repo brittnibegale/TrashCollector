@@ -10,14 +10,17 @@ namespace TrashCollector.Models
     {
         [Key]
         public int ID { get; set; }
+
         [Required]
-        [Display (Name = "Street number and name")]
+        [Display (Name = "Street Number and Name: ")]
         public string Street { get; set; }
+
         [Required]
-        [Display(Name = "City")]
+        [Display(Name = "City: ")]
         public string City { get; set; }
+
         [Required]
-        [Display (Name = "Zipcode")]
+        [Display (Name = "Zipcode: ")]
         public string Zipcode { get; set; }
 
     }

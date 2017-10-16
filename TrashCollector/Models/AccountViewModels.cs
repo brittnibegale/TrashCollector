@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TrashCollector.Models
 {
@@ -49,9 +50,8 @@ namespace TrashCollector.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,10 +64,19 @@ namespace TrashCollector.Models
 
     public class RegisterViewModel
     {
+        [Key]
+        [Required]
+        [Display(Name = "Role: ")]
+        public string UserRoles { get; set; }
+
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "Email: ")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "UserName: ")]
+        public string UserName { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -76,9 +85,16 @@ namespace TrashCollector.Models
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Confirm password: ")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [ForeignKey("AddressID")]
+        [Required]
+        public Address address { get; set; }
+        [Display(Name = "Address: ")]
+        public int AddressID { get; set; }
+
     }
 
     public class ResetPasswordViewModel

@@ -10,7 +10,8 @@ namespace TrashCollector.Models
     {
         [Key]
         public int ID { get; set; }
-        public string DayOfPickUp { get; set; }
-        public double Cost { get; set; }
+
+        public string DayChoice { get; set; }
+
     }
 }

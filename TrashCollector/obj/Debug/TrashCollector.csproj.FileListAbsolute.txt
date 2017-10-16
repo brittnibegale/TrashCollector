@@ -82,3 +82,5 @@ C:\Users\britt\Documents\devCode\Projects\TrashCollector\TrashCollector\obj\Debu
 C:\Users\britt\Documents\devCode\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.pdb
 C:\Users\britt\Documents\devCode\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.addmodels.resources
 C:\Users\britt\Documents\devCode\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.csproj.GenerateResource.Cache
+C:\Users\britt\Documents\devCode\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.fixeddatabases.resources
+C:\Users\britt\Documents\devCode\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.changedusers.resources
