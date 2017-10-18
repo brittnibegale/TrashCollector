@@ -14,6 +14,18 @@ namespace TrashCollector.Migrations
 
         protected override void Seed(TrashCollector.Models.ApplicationDbContext context)
         {
+            context.Day.AddOrUpdate(
+                p => p.DayChoice,
+                new Models.Day { DayChoice = "Monday" },
+                new Models.Day { DayChoice = "Tuesday"},
+                new Models.Day { DayChoice = "Wednesday"},
+                new Models.Day { DayChoice = "Thursday" },
+                new Models.Day { DayChoice = "Friday" },
+                new Models.Day { DayChoice = "Saturday"},
+                new Models.Day { DayChoice = "Sunday"}
+                );
+        
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

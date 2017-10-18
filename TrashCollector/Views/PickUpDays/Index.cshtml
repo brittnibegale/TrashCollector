@@ -15,10 +15,16 @@
             @Html.DisplayNameFor(model => model.Day.DayChoice)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Weeks)
+            @Html.DisplayNameFor(model => model.Cost)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Cost)
+            @Html.DisplayNameFor(model => model.day1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.day2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weeks)
         </th>
         <th></th>
     </tr>
@@ -29,17 +35,24 @@
             @Html.DisplayFor(modelItem => item.Day.DayChoice)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Weeks)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Cost)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.DisplayFor(modelItem => item.day1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.day2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weeks)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
+    break;
 }
 
 </table>

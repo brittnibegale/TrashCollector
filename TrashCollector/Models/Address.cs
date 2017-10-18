@@ -9,7 +9,7 @@ namespace TrashCollector.Models
     public class Address
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [Display (Name = "Street Number and Name: ")]

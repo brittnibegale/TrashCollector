@@ -62,16 +62,17 @@ namespace TrashCollector.Controllers
                 : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
                 : "";
-
+            ApplicationDbContext db = new ApplicationDbContext();
             var userId = User.Identity.GetUserId();
-            var model = new IndexViewModel
-            {
-                HasPassword = HasPassword(),
-                PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
-                TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
-                Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
-            };
+            var model = new ApplicationUser_IndexViewModel();
+            model.indexVM = new IndexViewModel();
+            model.appUser = UserManager.FindById(userId);
+            model.appUser.PickUpDay = db.PickUpDay.Where(m => m.Id == model.appUser.PickUpDayID).SingleOrDefault();
+            model.indexVM.HasPassword = HasPassword();
+                model.indexVM.PhoneNumber = await UserManager.GetPhoneNumberAsync(userId);
+                model.indexVM.TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId);
+                model.indexVM.Logins = await UserManager.GetLoginsAsync(userId);
+                model.indexVM.BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId);
             return View(model);
         }
 

@@ -152,9 +152,10 @@ namespace TrashCollector.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            ApplicationDbContext db = new ApplicationDbContext();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Addresses = model.address, PickUpDay = db.PickUpDay.Where(m => m.Id == 5).SingleOrDefault() };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

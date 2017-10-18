@@ -1,4 +1,4 @@
-﻿@model TrashCollector.Models.IndexViewModel
+﻿@model TrashCollector.Models.ApplicationUser_IndexViewModel
 @{
     ViewBag.Title = "Manage";
 }
@@ -13,7 +13,7 @@
         <dt>Password:</dt>
         <dd>
             [
-            @if (Model.HasPassword)
+            @if (Model.indexVM.HasPassword)
             {
                 @Html.ActionLink("Change your password", "ChangePassword")
             }
@@ -56,32 +56,22 @@
                 }
             </dd>
         *@
-        <dt>Two-Factor Authentication:</dt>
+        <dt>Number of Weeks left: </dt>
         <dd>
             <p>
-                There are no two-factor authentication providers configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                for details on setting up this ASP.NET application to support two-factor authentication.
+                @Html.DisplayNameFor(model => model.appUser.PickUpDay.Weeks)
             </p>
-            @*@if (Model.TwoFactor)
+            <p>
+                @if(Model.appUser.PickUpDay.Weeks != null)
                 {
-                    using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>Enabled
-                        <input type="submit" value="Disable" class="btn btn-link" />
-                        </text>
-                    }
+                    
+                    @Html.ActionLink("Change Number of Weeks", "Edit", "PickUpDay")
                 }
                 else
                 {
-                    using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>Disabled
-                        <input type="submit" value="Enable" class="btn btn-link" />
-                        </text>
-                    }
-                }*@
+                    @Html.ActionLink("Set Number of Weeks for Pick- Up", "Create", "PickUpDay")
+                }
+            </p>
         </dd>
     </dl>
 </div>

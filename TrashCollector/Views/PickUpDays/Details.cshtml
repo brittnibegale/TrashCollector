@@ -19,14 +19,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Weeks)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Weeks)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Cost)
         </dt>
 
@@ -34,9 +26,33 @@
             @Html.DisplayFor(model => model.Cost)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.day1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.day1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.day2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.day2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weeks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weeks)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

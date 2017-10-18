@@ -199,25 +199,51 @@
     <Compile Include="Controllers\DaysController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PickUpDaysController.cs" />
     <Compile Include="Controllers\usersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710131300455_add models.cs" />
-    <Compile Include="Migrations\201710131300455_add models.Designer.cs">
-      <DependentUpon>201710131300455_add models.cs</DependentUpon>
+    <Compile Include="Migrations\201710171544412_initial.cs" />
+    <Compile Include="Migrations\201710171544412_initial.Designer.cs">
+      <DependentUpon>201710171544412_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710132029288_fixed databases.cs" />
-    <Compile Include="Migrations\201710132029288_fixed databases.Designer.cs">
-      <DependentUpon>201710132029288_fixed databases.cs</DependentUpon>
+    <Compile Include="Migrations\201710171547504_adddata.cs" />
+    <Compile Include="Migrations\201710171547504_adddata.Designer.cs">
+      <DependentUpon>201710171547504_adddata.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710161531039_changed users.cs" />
-    <Compile Include="Migrations\201710161531039_changed users.Designer.cs">
-      <DependentUpon>201710161531039_changed users.cs</DependentUpon>
+    <Compile Include="Migrations\201710171608139_Seed PickUpDays.cs" />
+    <Compile Include="Migrations\201710171608139_Seed PickUpDays.Designer.cs">
+      <DependentUpon>201710171608139_Seed PickUpDays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710181334171_added workerinfo.cs" />
+    <Compile Include="Migrations\201710181334171_added workerinfo.Designer.cs">
+      <DependentUpon>201710181334171_added workerinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710181435447_added zipecodeworking.cs" />
+    <Compile Include="Migrations\201710181435447_added zipecodeworking.Designer.cs">
+      <DependentUpon>201710181435447_added zipecodeworking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710181517488_deleted workertable and added working zipcode to appuser.cs" />
+    <Compile Include="Migrations\201710181517488_deleted workertable and added working zipcode to appuser.Designer.cs">
+      <DependentUpon>201710181517488_deleted workertable and added working zipcode to appuser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710181525295_added workerzipcode.cs" />
+    <Compile Include="Migrations\201710181525295_added workerzipcode.Designer.cs">
+      <DependentUpon>201710181525295_added workerzipcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710181528287_added workingzipcode.cs" />
+    <Compile Include="Migrations\201710181528287_added workingzipcode.Designer.cs">
+      <DependentUpon>201710181528287_added workingzipcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710181918003_added day not coming.cs" />
+    <Compile Include="Migrations\201710181918003_added day not coming.Designer.cs">
+      <DependentUpon>201710181918003_added day not coming.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\ApplicationUser_IndexViewModel.cs" />
     <Compile Include="Models\Day.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -288,11 +314,12 @@
     <Content Include="Views\Shared\_Layout_customer.cshtml" />
     <Content Include="Views\Shared\_Layout_Worker.cshtml" />
     <Content Include="Views\users\users.cshtml" />
-    <Content Include="Views\Days\Create.cshtml" />
-    <Content Include="Views\Days\Delete.cshtml" />
-    <Content Include="Views\Days\Details.cshtml" />
-    <Content Include="Views\Days\Edit.cshtml" />
-    <Content Include="Views\Days\Index.cshtml" />
+    <Content Include="Views\PickUpDays\Create.cshtml" />
+    <Content Include="Views\PickUpDays\Delete.cshtml" />
+    <Content Include="Views\PickUpDays\Details.cshtml" />
+    <Content Include="Views\PickUpDays\Edit.cshtml" />
+    <Content Include="Views\PickUpDays\Index.cshtml" />
+    <Content Include="Views\Home\Map.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -306,14 +333,32 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710131300455_add models.resx">
-      <DependentUpon>201710131300455_add models.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710171544412_initial.resx">
+      <DependentUpon>201710171544412_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710132029288_fixed databases.resx">
-      <DependentUpon>201710132029288_fixed databases.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710171547504_adddata.resx">
+      <DependentUpon>201710171547504_adddata.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710161531039_changed users.resx">
-      <DependentUpon>201710161531039_changed users.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710171608139_Seed PickUpDays.resx">
+      <DependentUpon>201710171608139_Seed PickUpDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181334171_added workerinfo.resx">
+      <DependentUpon>201710181334171_added workerinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181435447_added zipecodeworking.resx">
+      <DependentUpon>201710181435447_added zipecodeworking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181517488_deleted workertable and added working zipcode to appuser.resx">
+      <DependentUpon>201710181517488_deleted workertable and added working zipcode to appuser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181525295_added workerzipcode.resx">
+      <DependentUpon>201710181525295_added workerzipcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181528287_added workingzipcode.resx">
+      <DependentUpon>201710181528287_added workingzipcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181918003_added day not coming.resx">
+      <DependentUpon>201710181918003_added day not coming.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
