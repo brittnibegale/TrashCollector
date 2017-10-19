@@ -82,10 +82,11 @@ namespace TrashCollector.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Cost,day1,day2,Weeks,DayID")] PickUpDay pickUpDay)
+        public ActionResult Edit([Bind(Include = "Id,day1,day2,Weeks,DayID")] PickUpDay pickUpDay)
         {
             if (ModelState.IsValid)
             {
+                pickUpDay.Cost = Int32.Parse(pickUpDay.Weeks) * 5;
                 db.Entry(pickUpDay).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

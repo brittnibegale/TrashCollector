@@ -22,14 +22,29 @@ namespace TrashCollector.Controllers
             List<Address> address = new List<Address>();
             var username = User.Identity.Name;
             var currentuser = context.Users.Where(m => m.UserName == username).First();
-            var addresses = context.Address.Where(m => m.Zipcode == currentuser.Workingzipcode).ToList();
-            
-            foreach(var place in addresses)
+            var invalidPickUps = context.PickUpDay.Where(m => m.day1 <= DateTime.Today && m.day2 >= DateTime.Today).Select(m => m.Id).ToList();
+            List<int> invalidAddress = new List<int>();
+            foreach (var pickups in invalidPickUps)
+            {
+               invalidAddress = context.Users.Where(m => m.PickUpDayID == pickups).Select(m => m.AddressID).ToList();
+            }
+            List<Address> addresses = new List<Address>();
+            foreach (var place in invalidAddress)
+            {
+                addresses = context.Address.Where(m => m.Id != place).ToList();
+            }
+            List<Address> zipcode = new List<Address>();
+            foreach(var thing in addresses)
+            {
+                zipcode = context.Address.Where(m => m.Zipcode == currentuser.Workingzipcode).ToList();
+            }
+
+            foreach (var place in zipcode)
             {
                 model.City = place.City;
                 model.Street = place.Street;
                 model.Zipcode = place.Zipcode;
-                addresses.Add(model);
+                address.Add(model);
             }
 
             return View(address);
