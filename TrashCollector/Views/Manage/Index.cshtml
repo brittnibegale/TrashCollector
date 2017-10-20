@@ -23,48 +23,15 @@
             }
             ]
         </dd>
-        @*<dt>External Logins:</dt>
-        <dd>
-            @Model.Logins.Count [
-            @Html.ActionLink("Manage", "ManageLogins") ]
-        </dd>*@
-        @*
-            Phone Numbers can used as a second factor of verification in a two-factor authentication system.
-             
-             See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                for details on setting up this ASP.NET application to support two-factor authentication using SMS.
-             
-             Uncomment the following block after you have set up two-factor authentication
-        *@
-        @*  
-            <dt>Phone Number:</dt>
-            <dd>
-                @(Model.PhoneNumber ?? "None")
-                @if (Model.PhoneNumber != null)
-                {
-                    <br />
-                    <text>[&nbsp;&nbsp;@Html.ActionLink("Change", "AddPhoneNumber")&nbsp;&nbsp;]</text>
-                    using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>[<input type="submit" value="Remove" class="btn-link" />]</text>
-                    }
-                }
-                else
-                {
-                    <text>[&nbsp;&nbsp;@Html.ActionLink("Add", "AddPhoneNumber")
-                }
-            </dd>
-        *@
+     
+       @if (User.IsInRole("Customer"))
+       {
         <dt>Number of Weeks left: </dt>
         <dd>
             <p>
-                @Html.DisplayNameFor(model => model.appUser.PickUpDay.Weeks)
-            </p>
-            <p>
-                @if(Model.appUser.PickUpDay.Weeks != null)
+                @if (Model.appUser.PickUpDay.Weeks != null)
                 {
-                    
+
                     @Html.ActionLink("Change Number of Weeks", "Edit", "PickUpDay")
                 }
                 else
@@ -73,5 +40,14 @@
                 }
             </p>
         </dd>
+       }
+
+        @if (User.IsInRole("Worker"))
+        {
+           <dt>Today's Covered Zipcode:</dt>
+           <dd>
+            @Html.ActionLink("Set Working Zipcode", "EditZipview","Home")
+            </dd>
+        }
     </dl>
 </div>

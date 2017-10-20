@@ -1,4 +1,4 @@
-﻿@model List<TrashCollector.Models.Address>
+﻿@model TrashCollector.Models.AddressViewModel
 
 @{
     ViewBag.Title = "Map";
@@ -18,20 +18,29 @@
     <h3>Today's Pick-up Locations</h3>
     <div id="map"></div>
     <script>
-       
+        var map;
+        var addresses = @Html.Raw(Json.Encode(Model))
        function initMap() {
-           var uluru = { lat: -25.363, lng: 131.044 };
-       var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-       });
-       for (var i = 0; i < length; i++) {
-
-       }
-        var marker = new google.maps.Marker({
-            position: "117+steeplechase+Dr",
-          map: map
-        });
+           var latlng = new google.maps.LatLng(-34.397, 150.644);
+           var mapOptions = {
+               zoom: 8,
+               center: latlng
+           }
+           map = new google.maps.Map(document.getElementById('map'),mapOptions); 
+           for(i=0; i<addresses.length; i++){
+               var geocoder = new google.maps.Geocoder();
+               geocoder.geocode({'address': addresses[i].Street + addresses[i].Zipcode},function(results,status){
+                   if(status == 'OK'){
+                       map.setCenter(results[0].geometry.location);
+                       var marker = new google.maps.Marker({
+                           map:map,
+                           position: result[0].geometry.location
+                       });
+                   }else{
+                       alert('Geocode was not successful for the following reason:'+ status);
+                   }
+               });
+           }
       }
     </script>
     <script async defer

@@ -240,18 +240,30 @@
     <Compile Include="Migrations\201710181918003_added day not coming.Designer.cs">
       <DependentUpon>201710181918003_added day not coming.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710201350492_added view models.cs" />
+    <Compile Include="Migrations\201710201350492_added view models.Designer.cs">
+      <DependentUpon>201710201350492_added view models.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710201353518_added ienumberable.cs" />
+    <Compile Include="Migrations\201710201353518_added ienumberable.Designer.cs">
+      <DependentUpon>201710201353518_added ienumberable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\AddressViewModel.cs" />
     <Compile Include="Models\ApplicationUser_IndexViewModel.cs" />
     <Compile Include="Models\Day.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PickUpDay.cs" />
+    <Compile Include="Models\UsernameViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-best.css" />
+    <Content Include="Content\bootstrap-fun.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -320,6 +332,8 @@
     <Content Include="Views\PickUpDays\Edit.cshtml" />
     <Content Include="Views\PickUpDays\Index.cshtml" />
     <Content Include="Views\Home\Map.cshtml" />
+    <Content Include="Views\Home\WorkdayInfo.cshtml" />
+    <Content Include="Views\Home\WorkingZipcod.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -359,6 +373,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710181918003_added day not coming.resx">
       <DependentUpon>201710181918003_added day not coming.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710201350492_added view models.resx">
+      <DependentUpon>201710201350492_added view models.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710201353518_added ienumberable.resx">
+      <DependentUpon>201710201353518_added ienumberable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

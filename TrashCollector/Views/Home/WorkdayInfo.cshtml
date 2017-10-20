@@ -1,0 +1,16 @@
+﻿@model TrashCollector.Models.UsernameViewModel
+@{
+    ViewBag.Title = "WorkdayInfo";
+}
+
+<h2>Today's Stops</h2>
+
+@foreach (var person in Model.people)
+{
+    <li>@person.UserName</li>
+    
+}
+    
+
+
+

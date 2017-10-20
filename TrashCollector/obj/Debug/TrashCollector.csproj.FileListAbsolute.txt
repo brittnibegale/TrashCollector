@@ -88,5 +88,6 @@ C:\Users\britt\Documents\devCode\Projects\TrashCollector\TrashCollector\obj\Debu
 C:\Users\britt\Documents\devCode\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.deletedworkertableandaddedworkingzipcodetoappuser.resources
 C:\Users\britt\Documents\devCode\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.addedworkerzipcode.resources
 C:\Users\britt\Documents\devCode\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.addedworkingzipcode.resources
-C:\Users\britt\Documents\devCode\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.csprojResolveAssemblyReference.cache
 C:\Users\britt\Documents\devCode\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.addeddaynotcoming.resources
+C:\Users\britt\Documents\devCode\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.addedviewmodels.resources
+C:\Users\britt\Documents\devCode\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.addedienumberable.resources

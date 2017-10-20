@@ -28,7 +28,6 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Pick- up Days", "Index", "PickUpDays")</li>
-
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -51,10 +50,10 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("View Today's Work", "Map", "Home")</li>
-                        
+                        @*<li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                        <li>@Html.ActionLink("View Today's Work Map", "Map", "Home")</li>
+                        <li>@Html.ActionLink("View Today's Addresses", "WorkdayInfo","Home")</li>
                     </ul>
                     @Html.Partial("_LoginPartial")
                 </div>
